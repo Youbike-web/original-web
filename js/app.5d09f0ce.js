@@ -577,9 +577,9 @@
             methods: {
                 getYoubikes: function() {
                     var t = this
-                      , e = "https://tcgbusfs.blob.core.windows.net/blobyoubike/YouBikeTP.json";
+                      , e = "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json";
                     this.axios.get(e).then((function(e) {
-                        e ? (t.youbikes = Object.values(e.data.retVal),
+                        e ? (t.youbikes = Object.values(e.data),
                         t.setFavYoubikes()) : t.$store.commit("SET_MSG", "errorYoubike")
                     }
                     ))
@@ -629,7 +629,7 @@
                 },
                 getWeathers: function() {
                     var t = this
-                      , e = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-061?Authorization=rdec-key-123-45678-011121314";
+                      , e = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-061?Authorization=CWA-5C92018F-E05F-458F-B9DF-C520AC286E92";
                     this.axios.get(e).then((function(e) {
                         e ? (t.weathers = e.data.records.locations[0].location,
                         t.setWeathers()) : t.$store.commit("SET_MSG", "errorWeather")
