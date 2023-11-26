@@ -578,6 +578,9 @@
                 document.body.clientWidth < 767.98 ? this.sidebarActive = !1 : this.sidebarActive = !0
             },
             methods: {
+                getDynamicCenter: function() {
+                    return { lat: this.latitude, lng: this.longitude };
+                },
                 getLocation() {
                     if (navigator.geolocation) {
                         navigator.geolocation.getCurrentPosition(showPosition);
