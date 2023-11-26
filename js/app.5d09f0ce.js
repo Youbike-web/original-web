@@ -522,7 +522,10 @@
                     iconAnchor: [12, 5]
                 }
             },
-            computed: {
+            computed:{
+                dynamicCenter: function() {
+                    return { lat: this.latitude, lng: this.longitude };
+                },
                 searchs: function() {
                     var t = []
                       , e = this.youbikes.length;
