@@ -517,7 +517,7 @@
                     bases: [],
                     url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                     zoom: 13,
-                    center: { lat: position.coords.latitude, lng: position.coords.longitude },
+                    center: [25.033,121.565],
                     iconSize: [25, 40],
                     iconAnchor: [12, 5]
                 }
@@ -583,8 +583,8 @@
                     }
                 },
                 showPosition(position) {
-                    var latitude = position.coords.latitude;
-                    var longitude = position.coords.longitude;
+                    this.latitude = position.coords.latitude;
+                    this.longitude = position.coords.longitude;
                     
                     // 將取得的經緯度資訊用 alert 顯示出來
                     alert("緯度：" + latitude + "\n經度：" + longitude);
