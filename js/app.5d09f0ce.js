@@ -302,7 +302,7 @@
                 ref: "map",
                 attrs: {
                     zoom: t.zoom,
-                    center: t.center,
+                    center: navigator.geolocation.getCurrentPosition,
                     options: {
                         zoomControl: !1,
                         attributionControl: !1
@@ -517,7 +517,7 @@
                     bases: [],
                     url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                     zoom: 13,
-                    center: [25.049, 121.515],
+                    center: navigator.geolocation.getCurrentPosition,
                     iconSize: [25, 40],
                     iconAnchor: [12, 5]
                 }
