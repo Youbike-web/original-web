@@ -304,7 +304,7 @@ const { search } = require("core-js/es6/symbol");
                 ref: "map",
                 attrs: {
                     zoom: t.zoom,
-                    center: locate,
+                    center: navigator.geolocation.getCurrentPosition,
                     options: {
                         zoomControl: !1,
                         attributionControl: !1
