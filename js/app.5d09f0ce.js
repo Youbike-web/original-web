@@ -517,7 +517,7 @@
                     bases: [],
                     url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                     zoom: 13,
-                    center: map.setCenter({ lat: latitude, lng: longitude }),
+                    center: { lat: latitude, lng: longitude },
                     iconSize: [25, 40],
                     iconAnchor: [12, 5]
                 }
