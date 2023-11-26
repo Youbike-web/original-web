@@ -1,3 +1,5 @@
+const { search } = require("core-js/es6/symbol");
+
 (function(t) {
     function e(e) {
         for (var a, o, n = e[0], c = e[1], l = e[2], d = 0, f = []; d < n.length; d++)
@@ -302,7 +304,7 @@
                 ref: "map",
                 attrs: {
                     zoom: t.zoom,
-                    center: navigator.geolocation.getCurrentPosition,
+                    center: locate,
                     options: {
                         zoomControl: !1,
                         attributionControl: !1
@@ -517,7 +519,7 @@
                     bases: [],
                     url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                     zoom: 13,
-                    center: navigator.geolocation.getCurrentPosition,
+                    center: locate,
                     iconSize: [25, 40],
                     iconAnchor: [12, 5]
                 }
