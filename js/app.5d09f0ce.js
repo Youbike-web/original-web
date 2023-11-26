@@ -518,6 +518,9 @@
                     url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                     zoom: 13,
                     center: [25.033,121.565],
+                    latitude: 25.033,
+                    longitude: 121.565,
+                    dynamicCenter: { lat: 25.033, lng: 121.565 },
                     iconSize: [25, 40],
                     iconAnchor: [12, 5]
                 }
@@ -581,23 +584,17 @@
                 getDynamicCenter: function() {
                     return { lat: this.latitude, lng: this.longitude };
                 },
-                getLocation() {
+                getLocation: function() {
                     if (navigator.geolocation) {
-                        navigator.geolocation.getCurrentPosition(showPosition);
+                        navigator.geolocation.getCurrentPosition(this.showPosition);
                     } else {
                         alert("抱歉，您的瀏覽器不支援地理定位。");
                     }
                 },
-                showPosition(position) {
+                showPosition: function(position) {
                     this.latitude = position.coords.latitude;
                     this.longitude = position.coords.longitude;
-                    
-                    // 將取得的經緯度資訊用 alert 顯示出來
-                    alert("緯度：" + latitude + "\n經度：" + longitude);
-            
-                    // 如果有地圖系統，可以在這裡更新地圖位置
-                    // 例如，如果使用 Google Maps API：
-                    // map.setCenter({ lat: latitude, lng: longitude });
+                    this.dynamicCenter = { lat: this.latitude, lng: this.longitude };
                 },
                 getYoubikes: function() {
                     var t = this
