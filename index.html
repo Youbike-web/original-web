@@ -19,9 +19,10 @@
   <meta property="og:url" content="#" />
   <meta property="og:description" content="臺北 YouBike 即時資訊地圖，方便你隨時查詢的小幫手" />
 
-  <script src="https://kit.fontawesome.com/a9468d723f.js" crossorigin="anonymous"></script>
-  <script src="src/App.vue"></script>
+  <!-- Vue 相關腳本 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script src="src/main.js"></script>
+  <script src="https://kit.fontawesome.com/a9468d723f.js" crossorigin="anonymous"></script>
   
   <script>
     function getLocation() {
@@ -49,14 +50,12 @@
 
 <body>
   <noscript>
-    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+    <strong>We're sorry but your app doesn't work properly without JavaScript enabled.
       Please enable it to continue.</strong>
   </noscript>
   <div id="app"></div>
-  <script src="src/App.vue"></script>
-  <script src="src/main.js"></script>
   <button onclick="getLocation()">取得目前位置</button>
-        <div id="map" style="height: 200px;"></div>
+  <div id="map" style="height: 200px;"></div>
 </body>
 
 </html>
